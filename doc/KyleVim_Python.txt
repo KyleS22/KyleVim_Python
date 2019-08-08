@@ -1,17 +1,52 @@
-*KyleVim_Python.txt* Handy settings for python coding using vim
+*KyleVimPython.txt* Handy vim functionality for everyday use
 
-TODO: Add ascii art title
+TODO: Insert awesome ascii art logo
 
 ====================================================================
 CONTENTS                                            *KyleVimPythonContents*
 
     1. Usage ................ |KyleVimPythonUsage|
     2. Mappings ............. |KyleVimPythonMappings|
-    3. License .............. |KyleVimLicense|
-    4. Bugs ................. |KyleVimBugs|
-    5. Contributing ......... |KyleVimContributing|
-    6. Changelog ............ |KyleVimChangelog|
-    7. Credits .............. |KyleVimCredits|
+    3. License .............. |KyleVimPythonLicense|
+    4. Bugs ................. |KyleVimPythonBugs|
+    5. Contributing ......... |KyleVimPythonContributing|
+    6. Changelog ............ |KyleVimPythonChangelog|
+    7. Credits .............. |KyleVimPythonCredits|
+
+====================================================================
+Section 1: Usage                                       *KyleVimPythonUsage*
+
+TODO: Usage - Simple usage quick start, details go in mappings
+
+====================================================================
+Section 2: Mappings                                    *KyleVimPythonMappings*
+
+TODO: Mappings
+
+====================================================================
+Section 3: License                                     *KyleVimPythonLicense*
+
+TODO: License - Don't put the whole license, just which one and where to find
+more details
+
+====================================================================
+Section 4: Bugs                                        *KyleVimPythonBugs*
+
+TODO: Bugs - Where to report them and any outstanding ones
+
+====================================================================
+Section 5: Contributing				       *KyleVimPythonContributing*
+
+TODO: Contributing
 
 
-TODO: Documentation
+====================================================================
+Section 6: Changelog                                   *KyleVimPythonChangelog*
+
+0.0.0
+	- Added documentation.  Wooho!
+
+====================================================================
+Section 7: Credits                                     *KyleVimPythonCredits*
+
+TODO: Credits
