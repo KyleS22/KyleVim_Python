@@ -1,0 +1,17 @@
+*KyleVim_Python.txt* Handy settings for python coding using vim
+
+TODO: Add ascii art title
+
+====================================================================
+CONTENTS                                            *KyleVimPythonContents*
+
+    1. Usage ................ |KyleVimPythonUsage|
+    2. Mappings ............. |KyleVimPythonMappings|
+    3. License .............. |KyleVimLicense|
+    4. Bugs ................. |KyleVimBugs|
+    5. Contributing ......... |KyleVimContributing|
+    6. Changelog ............ |KyleVimChangelog|
+    7. Credits .............. |KyleVimCredits|
+
+
+TODO: Documentation
