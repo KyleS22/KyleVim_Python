@@ -13,6 +13,7 @@ CONTENTS                                       *KyleVimPythonContents*
 
     1. Usage ................ |KyleVimPythonUsage|
 	1.1 Default Behaviour |KyleVimPythonDefault|
+	1.2 Commands ........ |KyleVimPythonCommands|
     2. Mappings ............. |KyleVimPythonMappings|
     3. Configuration ........ |KyleVimPythonConfiguration|
     4. License .............. |KyleVimPythonLicense|
@@ -50,6 +51,18 @@ You can replace the relevant details as you need.  If you have
 KyleVim installed (highly recommended) then you can use the
 quick inserts functionality to easily replace the file header
 Author and Description.
+
+-----------------------------------------------------------------
+1.2: Commands			  	    *KyleVimPythonCommands*
+
+KyleVimPython defines a few commands that help with python
+development:
+
+InsertDocstring(lineNum)	Insert an autofilled docstring for the 
+				function or class on the line indicated
+				by lineNum.
+			 
+
 
 ====================================================================
 Section 2: Mappings                            *KyleVimPythonMappings*

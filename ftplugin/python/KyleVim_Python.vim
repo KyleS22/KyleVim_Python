@@ -46,8 +46,23 @@ python_root_dir = normpath(join(plugin_root_dir, '../..', 'python'))
 sys.path.insert(0, python_root_dir)
 
 import kyle_vim_python
+import auto_docstring
 
 EOF
+
+
+" Auto docstrings
+" Insert an auto populated docstring at lineNum
+function! InsertDocstring(lineNum)
+	python3 import sys
+	python3 sys.argv = [vim.eval('a:lineNum')]
+	python3 auto_docstring.insert_docstring(sys.argv[0])
+endfunction
+
+command! -nargs=1 InsertDocstring call InsertDocstring(<f-args>)
+
+" TODO: This does not work
+noreabbr ''' <C-R>=call: InsertDocstring(line('.')-1)
 
 
 let g:KyleVim_Python_plugin_loaded = 1
