@@ -9,50 +9,72 @@
 										~
 
 ====================================================================
-CONTENTS                                            *KyleVimPythonContents*
+CONTENTS                                       *KyleVimPythonContents*
 
     1. Usage ................ |KyleVimPythonUsage|
     2. Mappings ............. |KyleVimPythonMappings|
-    3. License .............. |KyleVimPythonLicense|
-    4. Bugs ................. |KyleVimPythonBugs|
-    5. Contributing ......... |KyleVimPythonContributing|
-    6. Changelog ............ |KyleVimPythonChangelog|
-    7. Credits .............. |KyleVimPythonCredits|
+    3. Configuration ........ |KyleVimPythonConfiguration|
+    4. License .............. |KyleVimPythonLicense|
+    5. Bugs ................. |KyleVimPythonBugs|
+    6. Contributing ......... |KyleVimPythonContributing|
+    7. Changelog ............ |KyleVimPythonChangelog|
+    8. Credits .............. |KyleVimPythonCredits|
 
 ====================================================================
-Section 1: Usage                                       *KyleVimPythonUsage*
+Section 1: Usage                                  *KyleVimPythonUsage*
 
-TODO: Usage - Simple usage quick start, details go in mappings
+TODO: Usage
 
 ====================================================================
-Section 2: Mappings                                    *KyleVimPythonMappings*
+Section 2: Mappings                            *KyleVimPythonMappings*
 
 TODO: Mappings
 
 ====================================================================
-Section 3: License                                     *KyleVimPythonLicense*
+Section 3: Configuration		   *KyleVimPythonConfiguraion*
 
-TODO: License - Don't put the whole license, just which one and where to find
-more details
-
-====================================================================
-Section 4: Bugs                                        *KyleVimPythonBugs*
-
-TODO: Bugs - Where to report them and any outstanding ones
+TODO: Config
 
 ====================================================================
-Section 5: Contributing				       *KyleVimPythonContributing*
+Section 4: License                              *KyleVimPythonLicense*
 
-TODO: Contributing
+KyleVim is available under the MIT license.  More information is 
+available at: https://choosealicense.com/licenses/mit/
+
+====================================================================
+Section 5: Bugs                                    *KyleVimPythonBugs*
+
+I am currently not aware of any bugs, but I'm sure there are a few!
+
+If you find any issues, please report them using the 'Issues' tab at
+the main repository, or click this link:
+https://github.com/KyleS22/KyleVim_Python/issues
+
+A good bug report is as specific and descriptive as possible.  
+Please include as many details about your setup as possible.
+
+Thanks!
+
+====================================================================
+Section 6: Contributing			   *KyleVimPythonContributing*
+
+The main repository can be found at 
+https://github.com/KyleS22/KyleVim_Python
+
+If you would like to make a contribution, please create a new branch
+for your feature and create a pull request when ready.
+
+Thanks!
 
 
 ====================================================================
-Section 6: Changelog                                   *KyleVimPythonChangelog*
+Section 7: Changelog                          *KyleVimPythonChangelog*
 
 0.0.0
-	- Added documentation.  Wooho!
+	- 
 
 ====================================================================
-Section 7: Credits                                     *KyleVimPythonCredits*
+Section 8: Credits                              *KyleVimPythonCredits*
 
-TODO: Credits
+
+Written and maintained by Kyle Seidenthal
