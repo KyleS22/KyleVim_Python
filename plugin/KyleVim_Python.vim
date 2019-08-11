@@ -10,4 +10,12 @@ endif
 
 filetype plugin on
 
+let s:plugin_root_dir = fnamemodify(resolve(expand('<sfile>p')), ':h')
+
+
+" Automatic File Headers
+autocmd bufnewfile *.py execute "so " . s:plugin_root_dir . "/python_header.txt"
+autocmd bufnewfile *.py exe "1," . 10 . "g/File Name:.*/s//File Name: " .expand("%")
+autocmd bufnewfile *.py exe "1," . 10 . "g/Date:.*/s//Date: " .strftime("%d-%m-%Y")
+
 

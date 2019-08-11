@@ -9,4 +9,4 @@ Description: The base python script for the python extension
 
 """
 
-print("This is a python file!")
+#print("This is a python file!")

@@ -12,6 +12,7 @@
 CONTENTS                                       *KyleVimPythonContents*
 
     1. Usage ................ |KyleVimPythonUsage|
+	1.1 Default Behaviour |KyleVimPythonDefault|
     2. Mappings ............. |KyleVimPythonMappings|
     3. Configuration ........ |KyleVimPythonConfiguration|
     4. License .............. |KyleVimPythonLicense|
@@ -23,7 +24,32 @@ CONTENTS                                       *KyleVimPythonContents*
 ====================================================================
 Section 1: Usage                                  *KyleVimPythonUsage*
 
-TODO: Usage
+--------------------------------------------------------------------
+1.1: Default Behaviour				*KyleVimPythonDefault*
+
+KyleVimPython contains some automatic settings for easy editing of 
+python files with PEP8 style. The plugin will set the tab character
+to enter four spaces, rather than the tab character.  It will also
+enable smart indentation and python syntax highlighting.
+
+  
+New python files created with vim will automatically have a file header
+inserted at the top of the file.  This header looks like this:
+
+"""
+File Name: file.txt (auto populated)
+
+Authors: {% Authors %}
+
+Date: The current date (auto populated)
+
+Description: {% Description %}
+"""
+
+You can replace the relevant details as you need.  If you have
+KyleVim installed (highly recommended) then you can use the
+quick inserts functionality to easily replace the file header
+Author and Description.
 
 ====================================================================
 Section 2: Mappings                            *KyleVimPythonMappings*
@@ -71,7 +97,7 @@ Thanks!
 Section 7: Changelog                          *KyleVimPythonChangelog*
 
 0.0.0
-	- 
+	- Automatic file headers 
 
 ====================================================================
 Section 8: Credits                              *KyleVimPythonCredits*

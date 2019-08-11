@@ -1,0 +1,12 @@
+:insert
+"""
+File Name: 
+
+Authors: {% <AUTHOR> %}
+
+Date:
+
+Description: {% <DESCRIPTION> %}
+
+"""
+.
