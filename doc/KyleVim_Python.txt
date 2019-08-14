@@ -113,6 +113,7 @@ Section 7: Changelog                          *KyleVimPythonChangelog*
 
 0.0.0
 	- Automatic file headers 
+    - Auto docstrings 
 
 ====================================================================
 Section 8: Credits                              *KyleVimPythonCredits*
