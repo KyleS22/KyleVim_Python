@@ -1,0 +1,122 @@
+*KyleVimPython.txt* Handy vim functionality for everyday use
+
+ _  __     _    __     ___               ____        _   _                 	~
+| |/ /   _| | __\ \   / (_)_ __ ___     |  _ \ _   _| |_| |__   ___  _ __  	~
+| ' / | | | |/ _ \ \ / /| | '_ ` _ \    | |_) | | | | __| '_ \ / _ \| '_ \ 	~
+| . \ |_| | |  __/\ V / | | | | | | |   |  __/| |_| | |_| | | | (_) | | | |	~
+|_|\_\__, |_|\___| \_/  |_|_| |_| |_|___|_|    \__, |\__|_| |_|\___/|_| |_|	~
+     |___/                         |_____|     |___/                       	~
+										~
+
+====================================================================
+CONTENTS                                       *KyleVimPythonContents*
+
+    1. Usage ................ |KyleVimPythonUsage|
+	1.1 Default Behaviour |KyleVimPythonDefault|
+	1.2 Commands ........ |KyleVimPythonCommands|
+    2. Mappings ............. |KyleVimPythonMappings|
+    3. Configuration ........ |KyleVimPythonConfiguration|
+    4. License .............. |KyleVimPythonLicense|
+    5. Bugs ................. |KyleVimPythonBugs|
+    6. Contributing ......... |KyleVimPythonContributing|
+    7. Changelog ............ |KyleVimPythonChangelog|
+    8. Credits .............. |KyleVimPythonCredits|
+
+====================================================================
+Section 1: Usage                                  *KyleVimPythonUsage*
+
+--------------------------------------------------------------------
+1.1: Default Behaviour				*KyleVimPythonDefault*
+
+KyleVimPython contains some automatic settings for easy editing of 
+python files with PEP8 style. The plugin will set the tab character
+to enter four spaces, rather than the tab character.  It will also
+enable smart indentation and python syntax highlighting.
+
+  
+New python files created with vim will automatically have a file header
+inserted at the top of the file.  This header looks like this:
+
+"""
+File Name: file.txt (auto populated)
+
+Authors: {% Authors %}
+
+Date: The current date (auto populated)
+
+Description: {% Description %}
+"""
+
+You can replace the relevant details as you need.  If you have
+KyleVim installed (highly recommended) then you can use the
+quick inserts functionality to easily replace the file header
+Author and Description.
+
+-----------------------------------------------------------------
+1.2: Commands			  	    *KyleVimPythonCommands*
+
+KyleVimPython defines a few commands that help with python
+development:
+
+                                                    *InsertDocstring*
+InsertDocstring(lineNum)	Insert an autofilled docstring for the 
+				            function or class on the line indicated
+				            by lineNum.
+			 
+
+
+====================================================================
+Section 2: Mappings                            *KyleVimPythonMappings*
+
+<C-b>       This will call the InsertDocstring
+            function with the line at the cursor as the line number.
+
+====================================================================
+Section 3: Configuration		   *KyleVimPythonConfiguraion*
+
+TODO: Config
+
+====================================================================
+Section 4: License                              *KyleVimPythonLicense*
+
+KyleVim is available under the MIT license.  More information is 
+available at: https://choosealicense.com/licenses/mit/
+
+====================================================================
+Section 5: Bugs                                    *KyleVimPythonBugs*
+
+I am currently not aware of any bugs, but I'm sure there are a few!
+
+If you find any issues, please report them using the 'Issues' tab at
+the main repository, or click this link:
+https://github.com/KyleS22/KyleVim_Python/issues
+
+A good bug report is as specific and descriptive as possible.  
+Please include as many details about your setup as possible.
+
+Thanks!
+
+====================================================================
+Section 6: Contributing			   *KyleVimPythonContributing*
+
+The main repository can be found at 
+https://github.com/KyleS22/KyleVim_Python
+
+If you would like to make a contribution, please create a new branch
+for your feature and create a pull request when ready.
+
+Thanks!
+
+
+====================================================================
+Section 7: Changelog                          *KyleVimPythonChangelog*
+
+0.0.0
+	- Automatic file headers 
+    - Auto docstrings 
+
+====================================================================
+Section 8: Credits                              *KyleVimPythonCredits*
+
+
+Written and maintained by Kyle Seidenthal
