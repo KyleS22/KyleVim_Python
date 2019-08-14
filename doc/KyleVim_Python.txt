@@ -58,16 +58,18 @@ Author and Description.
 KyleVimPython defines a few commands that help with python
 development:
 
+                                                    *InsertDocstring*
 InsertDocstring(lineNum)	Insert an autofilled docstring for the 
-				function or class on the line indicated
-				by lineNum.
+				            function or class on the line indicated
+				            by lineNum.
 			 
 
 
 ====================================================================
 Section 2: Mappings                            *KyleVimPythonMappings*
 
-TODO: Mappings
+<C-b>       This will call the InsertDocstring
+            function with the line at the cursor as the line number.
 
 ====================================================================
 Section 3: Configuration		   *KyleVimPythonConfiguraion*

@@ -61,8 +61,8 @@ endfunction
 
 command! -nargs=1 InsertDocstring call InsertDocstring(<f-args>)
 
-" TODO: This does not work
-noreabbr ''' <C-R>=call: InsertDocstring(line('.')-1)
-
+" Map <C-b> to insert docstring for the current function
+nnoremap <C-b> :call InsertDocstring(line("."))<CR>
+inoremap <C-b> <ESC>:call InsertDocstring(line("."))<CR>I
 
 let g:KyleVim_Python_plugin_loaded = 1
