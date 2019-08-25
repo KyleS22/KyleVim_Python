@@ -76,6 +76,8 @@ def _insert_function_docstring(line_num):
     inside_class = _check_inside_class(line_num)
 
     for p in params:
+        if p == "":
+            continue
 
         default_val = None
 
