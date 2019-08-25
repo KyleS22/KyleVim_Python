@@ -88,3 +88,5 @@ endfunction
 autocmd BufWinEnter <buffer> call RunCodeChecks()
 autocmd BufWritePost <buffer> call RunCodeChecks()
 
+" Remove unwanted whitespace
+autocmd BufWritePre <buffer> %s/\s\+$//e
