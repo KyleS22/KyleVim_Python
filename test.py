@@ -10,10 +10,17 @@ Description: {% <DESCRIPTION> %}
 """
 
 
-def (this,  param, is):
+def test(this,  param):
+    pass
+
+
+def pl():
+    pass
+
+
+def potato():
     pass
 
 
 x = test
-
-
+y = 5
