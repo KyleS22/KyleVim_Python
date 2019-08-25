@@ -67,6 +67,8 @@ def _insert_function_docstring(line_num):
     docstring.append("{% What it do %}")
     docstring.append("")
 
+    inside_class = _check_inside_class(line_num)
+
     for p in params:
 
         default_val = None
@@ -76,6 +78,11 @@ def _insert_function_docstring(line_num):
             parts = p.split("=")
             p = parts[0]
             default_val = parts[1]
+
+        # Don't include self param in class docstrings
+        if inside_class:
+            if p == "self":
+                continue
 
         if default_val is not None:
             docstring.append(":param " + p + ": {% A parameter %}  The default"
@@ -153,3 +160,25 @@ def _check_header_type(line_num):
         return "CLASS"
     else:
         return None
+
+
+def _check_inside_class(line_num):
+    """
+    Checks to see if the given line number is inside of a class definition
+
+    :param line_num: The line number to check
+    :returns: True if the line is inside a class definition, false otherwise
+    """
+    result = vim.eval("search ('class *',  'bnWz')")
+
+    if result != 0:
+        func_indent = int(vim.eval("indent(" + str(line_num) + ")"))
+        class_indent = int(vim.eval("indent(" + str(result) + " )"))
+
+        # If the class indent is four less than the function, then the function
+        # is determined to be inside the class
+        if (class_indent + 4) == func_indent:
+            return True
+        else:
+            return False
+

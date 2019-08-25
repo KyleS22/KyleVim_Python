@@ -145,6 +145,7 @@ Section 7: Changelog                          *KyleVimPythonChangelog*
 	- Fix ']' bug with syntax error highlights
 	- Add a check for the current file to exist before trying
 		to run syntax and pep8 checks
+	- 'self' parameters are now ignored in class function docstrings, but not others
 0.1.0
 	- Automatic PEP8 and syntax error checking
 
