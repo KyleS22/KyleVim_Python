@@ -28,11 +28,10 @@ function! CheckPep8()
         	let char_num = msg_parts[2]
         	let description = msg_parts[3]
 
-        
+
 		" Get the offending line	
         	let bad_line = getline(line_num)
        			
-			
 		" Highlight the offending line
            	let m = matchadd('PEP8Warn', bad_line)
 
