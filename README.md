@@ -9,6 +9,11 @@ Automatically sets the proper indentation settings for development with PEP8 sty
 ## Auto Docstrings
 Automatically generate partial docstrings for functions and classes.  Just fill in the details!
 
+## PEP8 and Syntax Error Checking
+Highlight syntax errors and PEP8 style warnings in the current buffer when it is opened and written to.  Error messages are stored in the quickfix window for easy access and reading.
+
+NOTE: Requires `pycodestyle` and `pycodeflakes` to be installed.  See `:help KyleVimPythonSyntaxConfig` for configuration setting.
+
 # Installation
 This plugin can be installed using [Vundle](https://github.com/VundleVim/Vundle.vim).  Simply add the following line to your vimrc
 

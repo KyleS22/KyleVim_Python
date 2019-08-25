@@ -47,7 +47,7 @@ sys.path.insert(0, python_root_dir)
 
 import kyle_vim_python
 import auto_docstring
-
+import pep8_style
 EOF
 
 
@@ -64,5 +64,7 @@ command! -nargs=1 InsertDocstring call InsertDocstring(<f-args>)
 " Map <C-b> to insert docstring for the current function
 nnoremap <C-b> :call InsertDocstring(line("."))<CR>
 inoremap <C-b> <ESC>:call InsertDocstring(line("."))<CR>I
+
+
 
 let g:KyleVim_Python_plugin_loaded = 1
