@@ -68,7 +68,20 @@ def _insert_function_docstring(line_num):
     docstring.append("")
 
     for p in params:
-        docstring.append(":param " + p + ": {% A parameter %}")
+
+        default_val = None
+
+        # Check for default values
+        if "=" in p:
+            parts = p.split("=")
+            p = parts[0]
+            default_val = parts[1]
+
+        if default_val is not None:
+            docstring.append(":param " + p + ": {% A parameter %}  The default"
+                             + " value is " + default_val + ".")
+        else:
+            docstring.append(":param " + p + ": {% A parameter %}")
 
     docstring.append(":returns: {% A thing %}")
     docstring.append("\"\"\"")
