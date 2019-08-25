@@ -77,6 +77,11 @@ endfunction
 
 
 function RunCodeChecks()
+	
+	if !filereadable(bufname("%"))
+		return
+	endif
+
 	call clearmatches()
 	cexpr []
 
