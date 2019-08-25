@@ -146,6 +146,7 @@ Section 7: Changelog                          *KyleVimPythonChangelog*
 	- Add a check for the current file to exist before trying
 		to run syntax and pep8 checks
 	- 'self' parameters are now ignored in class function docstrings, but not others
+	- Function definitions split over multiple lines now have correct docstrings
 0.1.0
 	- Automatic PEP8 and syntax error checking
 

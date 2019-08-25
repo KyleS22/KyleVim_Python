@@ -52,6 +52,12 @@ def _insert_function_docstring(line_num):
     current_buffer = vim.current.buffer
     line = current_buffer[line_num-1]
 
+    # Check for multi-line function definitions
+    temp_line_num = line_num + 1
+    while line.endswith(","):
+        line += " " + current_buffer[temp_line_num-1].lstrip()
+        temp_line_num += 1
+
     # Parse function name and params
     parts = line.split("(")
 
@@ -97,7 +103,7 @@ def _insert_function_docstring(line_num):
         docstring[i] = spaces + docstring[i]
 
     # Insert the docstring to the current buffer
-    current_buffer.append(docstring, line_num)
+    current_buffer.append(docstring, temp_line_num-1)
 
 
 def _insert_class_docstring(line_num):
