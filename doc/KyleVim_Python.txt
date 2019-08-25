@@ -14,8 +14,10 @@ CONTENTS                                       *KyleVimPythonContents*
     1. Usage ................ |KyleVimPythonUsage|
 	1.1 Default Behaviour |KyleVimPythonDefault|
 	1.2 Commands ........ |KyleVimPythonCommands|
+	1.3 Syntax Checking . |KyleVimPythonSyntax|
     2. Mappings ............. |KyleVimPythonMappings|
     3. Configuration ........ |KyleVimPythonConfiguration|
+	3.1 Syntax Check Conf |KyleVimPythonSyntaxConfig|
     4. License .............. |KyleVimPythonLicense|
     5. Bugs ................. |KyleVimPythonBugs|
     6. Contributing ......... |KyleVimPythonContributing|
@@ -52,6 +54,7 @@ KyleVim installed (highly recommended) then you can use the
 quick inserts functionality to easily replace the file header
 Author and Description.
 
+
 -----------------------------------------------------------------
 1.2: Commands			  	    *KyleVimPythonCommands*
 
@@ -64,6 +67,22 @@ InsertDocstring(lineNum)	Insert an autofilled docstring for the
 				            by lineNum.
 			 
 
+-------------------------------------------------------------------
+1.3: Syntax Checking				*KyleVimPythonSyntax*
+
+KyleVimPython will run syntax and PEP8 styleguide checks on your code.
+This will be run whenever a new buffer is opened, and when the current
+buffer is saved.
+
+Syntax errors will be highlighted in red, while PEP8 style warnings
+are highlighted in yellow.  The error messages detected will be stored
+in the quickfix list, which can be access using the :copen command.
+When viewing the quickfix list, you can jump to an error by higlighting 
+it and pressing the enter key.
+
+Syntax checking requires pycodestyle and pyflakes to be installed.
+See |KyleVimPythonSyntaxConfig| for details on how to change this 
+command.
 
 ====================================================================
 Section 2: Mappings                            *KyleVimPythonMappings*
@@ -74,7 +93,18 @@ Section 2: Mappings                            *KyleVimPythonMappings*
 ====================================================================
 Section 3: Configuration		   *KyleVimPythonConfiguraion*
 
-TODO: Config
+--------------------------------------------------------------------
+3.1: Syntax Check Config		   *KyleVimPythonSyntaxConfig*
+
+Syntax checking requires pycodestyle and pyflakes to be installed.
+If you have these installed in a strange place, you will need to 
+tell the plugin by adding these lines to your .vimrc as needed:
+
+	'let g:pep8_command = "<path_to_pycodestyle>"'
+	'let g:pyflake_command = "<path_to_pyflakes>"'
+
+
+
 
 ====================================================================
 Section 4: License                              *KyleVimPythonLicense*
@@ -111,9 +141,12 @@ Thanks!
 ====================================================================
 Section 7: Changelog                          *KyleVimPythonChangelog*
 
+0.1.0
+	- Automatic PEP8 and syntax error checking
+
 0.0.0
 	- Automatic file headers 
-    - Auto docstrings 
+    	- Auto docstrings 
 
 ====================================================================
 Section 8: Credits                              *KyleVimPythonCredits*
