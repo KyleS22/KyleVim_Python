@@ -28,7 +28,6 @@ function! CheckPep8()
         	let char_num = msg_parts[2]
         	let description = msg_parts[3]
 
-
 		" Get the offending line	
         	let bad_line = getline(line_num)
        			
@@ -39,29 +38,43 @@ function! CheckPep8()
 endfunction
 
 " Check for python syntax errors
-function CheckPythonSyntax()
+function! CheckPythonSyntax()
 	
 	let flake_report = systemlist(g:pyflake_command . " " . bufname("%"))
-
+	
 	for msg in flake_report
-		
-		" Add the message to the quickfix list	
-		caddexpr msg
+	
+		" Make sure the message is valid
+		if stridx(msg, bufname("%")) > -1
+			" Add the message to the quickfix list	
+			caddexpr msg
+			
+			let msg_parts = split(msg, ":")
+			
+			" Get the offending line number
+			let line_num = msg_parts[1]
+			let description = msg_parts[2]
+			
 
-		let msg_parts = split(msg, ":")
-		
-		" Get the offending line number
-		let line_num = msg_parts[1]
-		let description = msg_parts[2]
+			" Get the offending line
+			let bad_line = getline(line_num)
+			let bad_line = CleanLine(bad_line)
 
-		" Get the offending line
-		let bad_line = getline(line_num)
-		
-		" Add highlighting to the offending line	
-		let m = matchadd('PyFlakeError', bad_line)
+			" Add highlighting to the offending line	
+			let m = matchadd('PyFlakeError', bad_line)
+		endif
 	endfor
 
 endfunction
+
+" Clean the bad line for instances of ']', which apparently messes up
+" matchadd()
+function CleanLine(line)
+	
+	return substitute(a:line, "]", "\\\\]", "")
+
+endfunction
+
 
 function RunCodeChecks()
 	call clearmatches()
