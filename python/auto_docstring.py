@@ -25,7 +25,7 @@ def insert_docstring(line_num):
     try:
         line_num = int(line_num)
     except Exception as e:
-        raise IOException("You must give a line number.")
+        raise IOException("You must give a line number. ")
 
     header_type = _check_header_type(line_num)
 
