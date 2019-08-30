@@ -84,11 +84,17 @@ Syntax checking requires pycodestyle and pyflakes to be installed.
 See |KyleVimPythonSyntaxConfig| for details on how to change this 
 command.
 
+
 ====================================================================
 Section 2: Mappings                            *KyleVimPythonMappings*
 
 <C-b>       This will call the InsertDocstring
             function with the line at the cursor as the line number.
+
+<F4>	    The F4 key will initiate a search for functions and classes
+	    that do not contain docstrings.  Press F4 and the cursor will
+	    move to the next function or class declaration that does not have
+            a docstring
 
 ====================================================================
 Section 3: Configuration		   *KyleVimPythonConfiguraion*
@@ -140,6 +146,10 @@ Thanks!
 
 ====================================================================
 Section 7: Changelog                          *KyleVimPythonChangelog*
+
+0.1.2
+	- Add documentation search
+	- Add workaround for IOError bug with flake8
 
 0.1.1
 	- Fix ']' bug with syntax error highlights

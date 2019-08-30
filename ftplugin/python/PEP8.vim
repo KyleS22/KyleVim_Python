@@ -77,14 +77,14 @@ endfunction
 
 " Clean the bad line for instances of ']', which apparently messes up
 " matchadd()
-function CleanLine(line)
+function! CleanLine(line)
 	
 	return substitute(a:line, "]", "\\\\]", "")
 
 endfunction
 
 
-function RunCodeChecks()
+function! RunCodeChecks()
 	
 	if !filereadable(bufname("%"))
 		return

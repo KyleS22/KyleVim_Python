@@ -9,6 +9,9 @@ Automatically sets the proper indentation settings for development with PEP8 sty
 ## Auto Docstrings
 Automatically generate partial docstrings for functions and classes.  Just fill in the details!
 
+## Docstring Search
+Use the `F4` key to place the cursor on the next function or class definition that does not have a docstring
+
 ## PEP8 and Syntax Error Checking
 Highlight syntax errors and PEP8 style warnings in the current buffer when it is opened and written to.  Error messages are stored in the quickfix window for easy access and reading.
 

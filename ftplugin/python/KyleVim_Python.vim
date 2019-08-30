@@ -1,6 +1,5 @@
 " Make sure this plugin is runnable
 
-let g:kyle_vim_python_version = "0.0.0"
 
 if !has("python3")
 	echo "Vim must be compiled with +python3 to use KyleVim"
@@ -47,7 +46,6 @@ sys.path.insert(0, python_root_dir)
 
 import kyle_vim_python
 import auto_docstring
-import pep8_style
 EOF
 
 
