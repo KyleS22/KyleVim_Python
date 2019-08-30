@@ -25,7 +25,7 @@ def insert_docstring(line_num):
     try:
         line_num = int(line_num)
     except Exception as e:
-        raise IOException("You must give a line number.")
+        raise IOException("You must give a line number. ")
 
     header_type = _check_header_type(line_num)
 
@@ -38,6 +38,51 @@ def insert_docstring(line_num):
     elif header_type == "CLASS":
         _insert_class_docstring(line_num)
 
+    elif header_type == "EXCEPTION":
+        _add_exception_to_docstring(line_num)
+
+
+def _add_exception_to_docstring(line_num):
+    """
+    Add the exception raised at line_num to the function docstring if it
+    exists.
+    Create the docstring if it does not exist.
+
+    :param line_num: The line number containing the docstring
+    :returns: None.  The exception will be added to the docstring
+    """
+
+    current_buffer = vim.current.buffer
+    exception_line = current_buffer[line_num-1]
+
+    # Find the line number with the function declaration on it
+    func_line_num = int(vim.eval("search ('def .*:',  'bnWz')"))
+
+    docstring_line_num = func_line_num + 1
+
+    docstring_line = current_buffer[docstring_line_num-1]
+
+    # Check to see if the line under the function declaration is a docstring
+    if "\"\"\"" not in docstring_line:
+        _insert_function_docstring(func_line_num)
+        docstring_line = current_buffer[docstring_line_num-1]
+
+    docstring_line_num += 1
+    docstring_line = current_buffer[docstring_line_num-1]
+
+    # Get the last line of the docstring
+    while "\"\"\"" not in docstring_line:
+        docstring_line_num += 1
+        docstring_line = current_buffer[docstring_line_num-1]
+
+    exception_type = exception_line.split("(")[0]
+    exception_type = exception_type.split(" ")[-1]
+
+    indents = _check_indentation(func_line_num)
+
+    exception_string = indents + ":raises " + exception_type + ": {% when? %}"
+
+    current_buffer.append(exception_string, docstring_line_num-1)
 
 def _insert_function_docstring(line_num):
     """
@@ -166,6 +211,8 @@ def _check_header_type(line_num):
         return "FUNC"
     elif "class" in line:
         return "CLASS"
+    elif "raise" in line:
+        return "EXCEPTION"
     else:
         return None
 

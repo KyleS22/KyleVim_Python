@@ -27,6 +27,8 @@ function! CheckPep8()
         	let line_num = msg_parts[1]
         	let char_num = msg_parts[2]
         	let description = msg_parts[3]
+		
+
 
 		" Get the offending line	
         	let bad_line = getline(line_num)
@@ -46,15 +48,21 @@ function! CheckPythonSyntax()
 	
 		" Make sure the message is valid
 		if stridx(msg, bufname("%")) > -1
-			" Add the message to the quickfix list	
-			caddexpr msg
-			
+						
 			let msg_parts = split(msg, ":")
 			
 			" Get the offending line number
 			let line_num = msg_parts[1]
 			let description = msg_parts[2]
 			
+	
+			" Jenk fix for bug in flake8
+			if description =~ "undefined name 'IOException'"
+				continue
+			endif
+			
+			" Add the message to the quickfix list	
+			caddexpr msg
 
 			" Get the offending line
 			let bad_line = getline(line_num)
@@ -69,14 +77,14 @@ endfunction
 
 " Clean the bad line for instances of ']', which apparently messes up
 " matchadd()
-function CleanLine(line)
+function! CleanLine(line)
 	
 	return substitute(a:line, "]", "\\\\]", "")
 
 endfunction
 
 
-function RunCodeChecks()
+function! RunCodeChecks()
 	
 	if !filereadable(bufname("%"))
 		return
