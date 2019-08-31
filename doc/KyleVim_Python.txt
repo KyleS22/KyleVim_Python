@@ -150,7 +150,8 @@ Thanks!
 
 ====================================================================
 Section 7: Changelog                          *KyleVimPythonChangelog*
-
+0.2.0
+	- Fix incorrect version number according to semantic versioning
 0.1.2
 	- Easily add exeptions to docstrings
     	- Add documentation search
