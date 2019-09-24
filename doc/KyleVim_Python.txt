@@ -150,6 +150,10 @@ Thanks!
 
 ====================================================================
 Section 7: Changelog                          *KyleVimPythonChangelog*
+0.2.1
+	- Fix bug with checking PEP8 style on opening files
+	- Changed error foreground colour for readability
+
 0.2.0
 	- Fix incorrect version number according to semantic versioning
 0.1.2
