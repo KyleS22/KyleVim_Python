@@ -26,7 +26,6 @@ function! CheckPep8()
         	let msg_parts = split(msg, ":")
         	let line_num = msg_parts[1]
         	let char_num = msg_parts[2]
-        	let description = msg_parts[3]
 		
 
 
