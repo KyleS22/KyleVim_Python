@@ -10,8 +10,8 @@ if !exists("g:pyflake_command")
 endif
 
 " highlight groups for PEP8
-hi PyFlakeError ctermfg=232 ctermbg=124
-hi PEP8Warn ctermfg=15 ctermbg=11
+hi PyFlakeError ctermfg=0 ctermbg=124
+hi PEP8Warn ctermfg=0 ctermbg=11
 " Check the PEP8 styling of the file
 function! CheckPep8()
 
