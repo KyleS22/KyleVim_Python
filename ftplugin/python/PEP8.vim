@@ -9,9 +9,18 @@ if !exists("g:pyflake_command")
 	let g:pyflake_command = "pyflakes"
 endif
 
+set number
+
+if !exists('g:KyleVim_Python_Disable_NumberHl')
+	set cursorline
+        hi cursorline cterm=none ctermbg=none
+endif
+
 " highlight groups for PEP8
 hi PyFlakeError ctermfg=0 ctermbg=124
 hi PEP8Warn ctermfg=0 ctermbg=11
+hi PEP8Gut ctermfg=11 ctermbg=none
+sign define warn text=8 texthl=PEP8Gut
 " Check the PEP8 styling of the file
 function! CheckPep8()
 
@@ -33,7 +42,8 @@ function! CheckPep8()
         	let bad_line = getline(line_num)
        			
 		" Highlight the offending line
-           	let m = matchadd('PEP8Warn', bad_line)
+           	"let m = matchadd('PEP8Warn', bad_line)
+		exe ":sign place 2 line=" . line_num ." name=warn file=" . expand("%:p")
 
 	endfor
 endfunction
@@ -68,7 +78,9 @@ function! CheckPythonSyntax()
 			let bad_line = CleanLine(bad_line)
 
 			" Add highlighting to the offending line	
-			let m = matchadd('PyFlakeError', bad_line)
+			"let m = matchadd('PyFlakeError', bad_line)\
+			exe ":sign place 2 line=" . line_num ." name=Vu_error file=" . expand("%:p")
+
 		endif
 	endfor
 
@@ -91,6 +103,7 @@ function! RunCodeChecks()
 
 	call clearmatches()
 	cexpr []
+	exe "sign unplace * file=" . expand("%:p")
 
 	call CheckPep8()
 	call CheckPythonSyntax()
