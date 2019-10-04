@@ -102,3 +102,11 @@ autocmd BufWritePost <buffer> call RunCodeChecks()
 
 " Remove unwanted whitespace
 autocmd BufWritePre <buffer> %s/\s\+$//e
+
+
+" 79 character column line
+if !exists("g:KyleVimPython_Disable_ColorCol") && exists('+colorcolumn')
+        set colorcolumn=79
+endif
+
+

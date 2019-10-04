@@ -64,5 +64,4 @@ nnoremap <C-b> :call InsertDocstring(line("."))<CR>
 inoremap <C-b> <ESC>:call InsertDocstring(line("."))<CR>I
 
 
-
 let g:KyleVim_Python_plugin_loaded = 1

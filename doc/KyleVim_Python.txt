@@ -114,7 +114,14 @@ tell the plugin by adding these lines to your .vimrc as needed:
 	'let g:pyflake_command = "<path_to_pyflakes>"'
 
 
+--------------------------------------------------------------------
+3.2: Color Column Config		       *KyleVimPythonColorCol*
 
+By default, the plugin will display a column at 79 characters to show
+the max line length that follows the PEP8 standard.  If you wish to
+disable this visual line, simply add the following to your .vimrc:
+
+	'let g:KyleVimPython_Disable_ColorCol = 1' 
 
 ====================================================================
 Section 4: License                              *KyleVimPythonLicense*
@@ -150,6 +157,9 @@ Thanks!
 
 ====================================================================
 Section 7: Changelog                          *KyleVimPythonChangelog*
+
+0.3.0
+	- Add visual column to indicate end of PEP8 line length
 0.2.1
 	- Fix bug with checking PEP8 style on opening files
 	- Changed error foreground colour for readability
