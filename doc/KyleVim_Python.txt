@@ -18,6 +18,8 @@ CONTENTS                                       *KyleVimPythonContents*
     2. Mappings ............. |KyleVimPythonMappings|
     3. Configuration ........ |KyleVimPythonConfiguration|
 	    3.1 Syntax Check Conf |KyleVimPythonSyntaxConfig|
+	    3.2 Color Column Conf |KyleVimPythonColorCol|
+	    3.3 Line Number Hl .. |KyleVimPythonLineHl|
     4. License .............. |KyleVimPythonLicense|
     5. Bugs ................. |KyleVimPythonBugs|
     6. Contributing ......... |KyleVimPythonContributing|
@@ -78,8 +80,8 @@ KyleVimPython will run syntax and PEP8 styleguide checks on your code.
 This will be run whenever a new buffer is opened, and when the current
 buffer is saved.
 
-Syntax errors will be highlighted in red, while PEP8 style warnings
-are highlighted in yellow.  The error messages detected will be stored
+Syntax errors will be indicated by a red '!', while PEP8 style warnings
+are indicated by a yellow '8'.  The error messages detected will be stored
 in the quickfix list, which can be access using the :copen command.
 When viewing the quickfix list, you can jump to an error by higlighting 
 it and pressing the enter key.
@@ -123,6 +125,14 @@ disable this visual line, simply add the following to your .vimrc:
 
 	'let g:KyleVimPython_Disable_ColorCol = 1' 
 
+---------------------------------------------------------------------
+3.3: Line Number Highlight Config                *KyleVimPythonLineHl*
+
+By default, the current line number is highlighted in the line number 
+gutter.  To disable this, add the following to your .vimrc:
+
+	'let g:KyleVimPython_Disable_NumberHl = 1'
+
 ====================================================================
 Section 4: License                              *KyleVimPythonLicense*
 
@@ -157,6 +167,9 @@ Thanks!
 
 ====================================================================
 Section 7: Changelog                          *KyleVimPythonChangelog*
+
+0.4.0
+	- Changed ugly error highlights to a more sensible icon in the line number gutter
 
 0.3.0
 	- Add visual column to indicate end of PEP8 line length
