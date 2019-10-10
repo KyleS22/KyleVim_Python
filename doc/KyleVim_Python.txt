@@ -168,6 +168,9 @@ Thanks!
 ====================================================================
 Section 7: Changelog                          *KyleVimPythonChangelog*
 
+0.4.1
+	- Fix bug #25: Creating new files in subdirectories no longer produces an error
+
 0.4.0
 	- Changed ugly error highlights to a more sensible icon in the line number gutter
 
