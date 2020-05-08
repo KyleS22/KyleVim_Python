@@ -120,6 +120,18 @@ def _insert_function_docstring(line_num):
 
     inside_class = _check_inside_class(line_num)
 
+    num_params = 0
+    for p in params:
+        if p == "":
+            continue
+        elif p == "self" and inside_class:
+            continue
+        else:
+            num_params += 1
+
+    if num_params > 0:
+        docstring.append("Args:")
+
     for p in params:
         if p == "":
             continue
@@ -138,12 +150,14 @@ def _insert_function_docstring(line_num):
                 continue
 
         if default_val is not None:
-            docstring.append(":param " + p + ": {% A parameter %}  The default"
+            docstring.append("    " + p + ": {% A parameter %}  The default"
                              + " value is " + default_val + ".")
         else:
-            docstring.append(":param " + p + ": {% A parameter %}")
+            docstring.append("    " + p + ": {% A parameter %}")
 
-    docstring.append(":returns: {% A thing %}")
+    docstring.append("")
+    docstring.append("Returns:")
+    docstring.append("    {% A thing %}: {% Description %}")
     docstring.append("\"\"\"")
 
     for i in range(len(docstring)):
@@ -167,6 +181,9 @@ def _insert_class_docstring(line_num):
 
     docstring = ["\"\"\""]
     docstring.append("{% classy comment here %}")
+    docstring.append("")
+    docstring.append("Attributes:")
+    docstring.append("    {% An Attribute %}: {% Description %}")
     docstring.append("\"\"\"")
 
     for i in range(len(docstring)):
