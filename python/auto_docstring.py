@@ -33,13 +33,99 @@ def insert_docstring(line_num):
         return False
 
     elif header_type == "FUNC":
-        _insert_function_docstring(line_num)
+        if _is_pytests():
+            _insert_test_docstring(line_num)
+        else:
+            _insert_function_docstring(line_num)
 
     elif header_type == "CLASS":
         _insert_class_docstring(line_num)
 
     elif header_type == "EXCEPTION":
         _add_exception_to_docstring(line_num)
+
+
+def _is_pytests():
+    result = vim.eval("search ('import pytest')")
+
+    if int(result) == 0:
+        return False
+    else:
+        return True
+
+def _insert_test_docstring(line_num):
+    # Get the line
+    current_buffer = vim.current.buffer
+    line = current_buffer[line_num-1]
+
+    # Check for multi-line function definitions
+    temp_line_num = line_num + 1
+    while line.endswith(","):
+        line += " " + current_buffer[temp_line_num-1].lstrip()
+        temp_line_num += 1
+
+    # Parse function name and params
+    parts = line.split("(")
+
+    params = parts[1]
+    params = params.split(")")[0]
+    params = params.split(", ")
+
+    # indent the docstring under the function
+    spaces = _check_indentation(line_num)
+    # Build the docstring
+
+    docstring = ["\"\"\""]
+    docstring.append("{% What it do %}")
+    docstring.append("")
+
+    inside_class = _check_inside_class(line_num)
+
+    num_params = 0
+    for p in params:
+        if p == "":
+            continue
+        elif p == "self" and inside_class:
+            continue
+        else:
+            num_params += 1
+
+    if num_params > 0:
+        docstring.append("Args:")
+
+    for p in params:
+        if p == "":
+            continue
+
+        default_val = None
+
+        # Check for default values
+        if "=" in p:
+            parts = p.split("=")
+            p = parts[0]
+            default_val = parts[1]
+
+        # Don't include self param in class docstrings
+        if inside_class:
+            if p == "self":
+                continue
+
+        if default_val is not None:
+            docstring.append("    " + p + ": {% A parameter %}  The default"
+                             + " value is " + default_val + ".")
+        else:
+            docstring.append("    " + p + ": {% A parameter %}")
+
+    docstring.append("")
+    docstring.append("Test Condition:")
+    docstring.append("    {% A thing %}")
+    docstring.append("\"\"\"")
+
+    for i in range(len(docstring)):
+        docstring[i] = spaces + docstring[i]
+
+    # Insert the docstring to the current buffer
+    current_buffer.append(docstring, temp_line_num-1)
 
 
 def _add_exception_to_docstring(line_num):
