@@ -46,7 +46,7 @@ def insert_docstring(line_num):
 
 
 def _is_pytests():
-    result = vim.eval("search ('import pytest')")
+    result = vim.eval("search ('import pytest', 'bnWz')")
 
     if int(result) == 0:
         return False
