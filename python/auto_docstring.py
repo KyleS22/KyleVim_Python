@@ -157,7 +157,7 @@ def _insert_function_docstring(line_num):
 
     docstring.append("")
     docstring.append("Returns:")
-    docstring.append("    {% A thing %}: {% Description %}")
+    docstring.append("    {% A thing %}")
     docstring.append("\"\"\"")
 
     for i in range(len(docstring)):
