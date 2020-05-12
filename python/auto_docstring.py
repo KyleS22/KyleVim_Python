@@ -327,9 +327,10 @@ def _check_inside_class(line_num):
     :param line_num: The line number to check
     :returns: True if the line is inside a class definition, false otherwise
     """
-    result = vim.eval("search ('class *',  'bnWz')")
+    result = vim.eval("search ('^class *',  'bnWz')")
 
     if result != 0:
+        print(result)
         func_indent = int(vim.eval("indent(" + str(line_num) + ")"))
         class_indent = int(vim.eval("indent(" + str(result) + " )"))
 
