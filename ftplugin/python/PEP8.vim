@@ -33,10 +33,15 @@ function! CheckPep8()
 
 		" Split the message into useful parts
         	let msg_parts = split(msg, ":")
+
+		if len(msg_parts) < 3
+
+			continue
+		endif
+
         	let line_num = msg_parts[1]
         	let char_num = msg_parts[2]
 		
-
 
 		" Get the offending line	
         	let bad_line = getline(line_num)
