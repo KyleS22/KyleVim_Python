@@ -57,6 +57,11 @@ quick inserts functionality to easily replace the file header
 Author and Description.
 
 
+autopep8 is set to be the default automatic styler for python files.  
+You can use vim's standard auto styling commands to use this. 
+Highlight lines and use 'gq' to style.  'gqap' will style 
+'paragraphs' of code.  Use 'gggqG' to restyle the whole file. 
+
 -----------------------------------------------------------------
 1.2: Commands			  	    *KyleVimPythonCommands*
 
