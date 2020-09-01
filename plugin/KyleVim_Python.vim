@@ -19,3 +19,4 @@ autocmd bufnewfile *.py exe "1," . 10 . "g/File Name:.*/s//File Name: " .expand(
 autocmd bufnewfile *.py exe "1," . 10 . "g/Date:.*/s//Date: " .strftime("%d-%m-%Y")
 
 
+au FileType python setlocal formatprg=autopep8\ -
