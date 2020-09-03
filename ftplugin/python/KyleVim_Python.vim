@@ -63,5 +63,7 @@ command! -nargs=1 InsertDocstring call InsertDocstring(<f-args>)
 nnoremap <C-b> :call InsertDocstring(line("."))<CR>
 inoremap <C-b> <ESC>:call InsertDocstring(line("."))<CR>I
 
+compiler pyunit
+set makeprg=python3\ %
 
 let g:KyleVim_Python_plugin_loaded = 1
