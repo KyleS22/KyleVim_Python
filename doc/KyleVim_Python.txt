@@ -62,6 +62,11 @@ You can use vim's standard auto styling commands to use this.
 Highlight lines and use 'gq' to style.  'gqap' will style 
 'paragraphs' of code.  Use 'gggqG' to restyle the whole file. 
 
+
+The default compiler for python files is set to be 'python3'.
+This makes it possible to use ':make' to run the current python 
+script.
+
 -----------------------------------------------------------------
 1.2: Commands			  	    *KyleVimPythonCommands*
 
